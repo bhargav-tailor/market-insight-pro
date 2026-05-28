@@ -98,28 +98,28 @@ import { ButtonComponent } from '../../shared/components';
           </div>
         </div>
 
-        <div class="market-ticker">
-          <div class="ticker-content">
-            <h3>Live Market Updates</h3>
-            <div class="ticker-items">
-              <div class="ticker-item">
-                <span class="ticker-label">NIFTY 50</span>
-                <span class="ticker-value">24,850.35</span>
-                <span class="ticker-change positive">+0.61%</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-label">SENSEX</span>
-                <span class="ticker-value">81,325.50</span>
-                <span class="ticker-change negative">-0.15%</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-label">India VIX</span>
-                <span class="ticker-value">14.25</span>
-                <span class="ticker-change positive">+5.59%</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<!--        <div class="market-ticker">-->
+<!--          <div class="ticker-content">-->
+<!--            <h3>Live Market Updates</h3>-->
+<!--            <div class="ticker-items">-->
+<!--              <div class="ticker-item">-->
+<!--                <span class="ticker-label">NIFTY 50</span>-->
+<!--                <span class="ticker-value">24,850.35</span>-->
+<!--                <span class="ticker-change positive">+0.61%</span>-->
+<!--              </div>-->
+<!--              <div class="ticker-item">-->
+<!--                <span class="ticker-label">SENSEX</span>-->
+<!--                <span class="ticker-value">81,325.50</span>-->
+<!--                <span class="ticker-change negative">-0.15%</span>-->
+<!--              </div>-->
+<!--              <div class="ticker-item">-->
+<!--                <span class="ticker-label">India VIX</span>-->
+<!--                <span class="ticker-value">14.25</span>-->
+<!--                <span class="ticker-change positive">+5.59%</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
   `,
@@ -138,14 +138,15 @@ import { ButtonComponent } from '../../shared/components';
       position: absolute;
       width: 100%;
       height: 100%;
-      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+      background-color: #1f2937;
+      /*background-image: url('');*/
       z-index: 0;
     }
 
     .login-content {
       display: flex;
       gap: 32px;
-      width: 90%;
+      width: 30%;
       max-width: 1000px;
       z-index: 10;
       position: relative;
@@ -354,19 +355,21 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    if (this.loginForm.valid) {
-      this.isLoading = true;
-      this.authService.login(this.loginForm.value).subscribe({
-        next: () => {
-          this.isLoading = false;
-          this.router.navigate(['/app/dashboard']);
-        },
-        error: (err) => {
-          this.isLoading = false;
-          console.error('Login failed:', err);
-        }
-      });
-    }
+    debugger
+    this.router.navigate(['../../app/dashboard']);
+    // if (this.loginForm.valid) {
+    //   this.isLoading = true;
+    //   this.authService.login(this.loginForm.value).subscribe({
+    //     next: () => {
+    //       this.isLoading = false;
+    //       this.router.navigate(['/app/dashboard']);
+    //     },
+    //     error: (err) => {
+    //       this.isLoading = false;
+    //       console.error('Login failed:', err);
+    //     }
+    //   });
+    // }
   }
 
   navigateToPackages(): void {

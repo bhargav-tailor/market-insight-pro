@@ -210,6 +210,7 @@ export class SidebarComponent {
 
   toggleCollapse(): void {
     this.toggleCollapsed.emit();
+
   }
 
   onLogout(): void {

@@ -7,8 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ButtonComponent, CardComponent } from '../../shared/components';
+import {ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule} from '@angular/forms';
+import { ButtonComponent } from '../../shared/components';
 import { Package, SubscriptionTier } from '../../models';
 
 type CheckoutStep = 'select' | 'details' | 'payment';
@@ -26,7 +26,7 @@ type CheckoutStep = 'select' | 'details' | 'payment';
     MatInputModule,
     ReactiveFormsModule,
     ButtonComponent,
-    CardComponent
+    FormsModule
   ],
   template: `
     <div class="packages-container">

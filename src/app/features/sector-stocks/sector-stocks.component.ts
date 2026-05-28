@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, NgModule, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MarketDataService } from '../../core/services/market-data.service';
 import { Stock, SectorData } from '../../models';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-sector-stocks',
   standalone: true,
-  imports: [CommonModule, MatSelectModule, MatFormFieldModule, MatTableModule],
+  imports: [CommonModule, MatSelectModule, MatFormFieldModule, MatTableModule, FormsModule],
   template: `
     <div class="sector-stocks-container">
       <div class="page-header">
@@ -211,8 +212,8 @@ import { Stock, SectorData } from '../../models';
 })
 export class SectorStocksComponent implements OnInit {
   displayedColumns: string[] = ['rank', 'name', 'weightage', 'ltp', 'performance'];
-  sectors: string[] = [];
-  selectedSector: string = '';
+  sectors: any[] = [];
+  selectedSector: any = '';
   sectorStocks: Stock[] = [];
 
   constructor(private marketDataService: MarketDataService) {}
@@ -236,8 +237,7 @@ export class SectorStocksComponent implements OnInit {
   }
 
   getTotalMarketCap(): number {
-    return this.sectorStocks.reduce((sum, stock) => sum + (stock.marketCap || 0), 0);
+    const value = this.sectorStocks.reduce((sum: any, stock: any) => sum + (stock.marketCap || 0), 0)
+    return <number>value;
   }
 }
-
-import { FormsModule } from '@angular/forms';

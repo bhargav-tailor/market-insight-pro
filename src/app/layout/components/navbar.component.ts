@@ -37,7 +37,7 @@ import { takeUntil } from 'rxjs/operators';
           <span class="logo">Market Insight Pro</span>
         </div>
 
-        <div class="navbar-center">
+        <div class="navbar-right">
           <mat-form-field appearance="outline" class="search-field">
             <mat-label>Search stocks...</mat-label>
             <input matInput placeholder="Search by symbol or company name" />
@@ -60,7 +60,7 @@ import { takeUntil } from 'rxjs/operators';
             <button mat-menu-item disabled>
               <span>{{ userEmail }}</span>
             </button>
-            <mat-divider></mat-divider>
+<!--            <mat-divider></mat-divider>-->
             <button mat-menu-item>
               <mat-icon>person</mat-icon>
               <span>Profile</span>
@@ -69,7 +69,7 @@ import { takeUntil } from 'rxjs/operators';
               <mat-icon>settings</mat-icon>
               <span>Settings</span>
             </button>
-            <mat-divider></mat-divider>
+<!--            <mat-divider></mat-divider>-->
             <button mat-menu-item (click)="logout()">
               <mat-icon>logout</mat-icon>
               <span>Logout</span>
@@ -95,6 +95,7 @@ import { takeUntil } from 'rxjs/operators';
       padding: 0 16px;
       height: 64px;
       max-width: 100%;
+      width: 100%;
     }
 
     .navbar-left {

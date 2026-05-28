@@ -10,6 +10,7 @@ import { MarketDataService } from '../../core/services/market-data.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Stock, MarketIndex } from '../../models';
+import {NumberPipe} from '../../pipes/datapipes';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,7 +22,8 @@ import { Stock, MarketIndex } from '../../models';
     MatSortModule,
     MatIconModule,
     MatButtonModule,
-    SummaryCardComponent
+    SummaryCardComponent,
+    NumberPipe
   ],
   template: `
     <div class="dashboard-container">

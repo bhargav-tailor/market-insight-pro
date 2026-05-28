@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar.component';
 import { SidebarComponent } from './components/sidebar.component';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, SidebarComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, SidebarComponent, FormsModule],
   template: `
     <div class="layout-container">
       <app-navbar (toggleSidebar)="toggleSidebar()"></app-navbar>
